@@ -12,7 +12,7 @@ export default function Description() {
             streams of various virtual youtubers (a.k.a. V-Tubers).
           </div>
           <div className={styles.page_info}>
-            You are currently on the Hololive page on the website.
+            You are currently on the Hololive page of the website.
           </div>
         </div>
       </div>
