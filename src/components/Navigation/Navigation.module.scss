@@ -9,10 +9,19 @@
   font-weight: 500;
   background: $white;
   box-shadow: 0 5px 20px 0 $black;
+  height: 4em;
 
-  .siteName {
+  .siteNameContainer {
     width: 50%;
-    margin-left: 5em;
+    margin: 0;
+
+    .siteName {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 8em;
+      height: 100%;
+    }
   }
 
   .navigators {
@@ -23,6 +32,15 @@
   }
 
   .navs {
-    margin-right: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8em;
+    height: 100%;
+  }
+
+  .navs:hover {
+    color: $white;
+    background: $bot;
   }
 }
