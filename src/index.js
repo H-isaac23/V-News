@@ -4,11 +4,13 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/Navigation/Navigation";
 import Description from "./components/Description/Description";
+import UpdatesBody from "./components/UpdatesBody/UpdatesBody";
 
 ReactDOM.render(
   <React.StrictMode>
     <Navbar />
     <Description />
+    <UpdatesBody />
   </React.StrictMode>,
   document.getElementById("root")
 );
