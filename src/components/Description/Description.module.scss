@@ -1,13 +1,14 @@
 @import "../../styles/variables.scss";
 
 .container {
+  height: auto;
   font-size: 1em;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-areas: "info img";
+  grid-template-columns: 50% 50%;
   margin-top: 3em;
 
   .info {
-    width: 50%;
     color: $white;
     margin-top: 5em;
     margin-left: 8em;
@@ -23,7 +24,7 @@
       font-size: 1.125em;
       font-weight: 400;
       line-height: 1.5em;
-      width: 40ch;
+      max-width: 40ch;
     }
 
     .page_info {
@@ -32,14 +33,33 @@
   }
 
   .image {
-    width: 50%;
     position: relative;
+    height: max-content;
+    width: 100%;
+    bottom: 0;
 
     img {
-      max-width: 100%;
-      max-height: 100%;
-      position: absolute;
-      bottom: -1em;
+      position: relative;
+      width: 100%;
+      max-height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-phone) {
+  .container {
+    grid-template-areas:
+      "1fr"
+      "1fr";
+
+    grid-template-columns: none;
+    grid-template-rows: auto;
+    font-size: 0.8em;
+
+    .info {
+      margin-top: 5em;
+      margin-left: 3em;
+      margin-bottom: 0;
     }
   }
 }
