@@ -4,11 +4,13 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/Navigation/Navigation";
 import Description from "./components/Description/Description";
+import TweetsBody from "./components/TweetsBody/TweetsBody";
 
 ReactDOM.render(
   <React.StrictMode>
     <Navbar />
     <Description />
+    <TweetsBody />
   </React.StrictMode>,
   document.getElementById("root")
 );

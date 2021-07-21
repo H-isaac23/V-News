@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+
+.main {
+  background: white;
+  box-shadow: 0 -5px 1em 0 rgba(0, 0, 0, 0.5);
+  height: 20em;
+  font-size: 1em;
+}
+
+.titleContainer {
+  height: 20em;
+  background: $white;
+  display: flex;
+  align-items: center;
+
+  .sectionTitle {
+    margin-left: 2em;
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: 3em;
+    font-weight: bold;
+    background: $primary;
+    border-radius: 0.5em;
+    color: $white;
+  }
+}
