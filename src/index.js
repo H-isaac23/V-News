@@ -1,15 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import Navbar from "./components/Navigation/Navigation";
-import Description from "./components/Description/Description";
-import TweetsBody from "./components/TweetsBody/TweetsBody";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Navbar />
-    <Description />
-    <TweetsBody />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
