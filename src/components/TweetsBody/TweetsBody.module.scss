@@ -23,3 +23,9 @@
     color: $white;
   }
 }
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .main {
+    font-size: 0.6em;
+  }
+}
