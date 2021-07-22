@@ -1,7 +1,7 @@
 import styles from "./Description.module.scss";
 import group_image from "../../public/hololive.png";
 
-export default function Description() {
+const Description = () => {
   return (
     <div className={styles.container}>
       <div className={styles.info}>
@@ -21,4 +21,6 @@ export default function Description() {
       </div>
     </div>
   );
-}
+};
+
+export default Description;

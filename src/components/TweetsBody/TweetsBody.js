@@ -1,6 +1,5 @@
 import styles from "./TweetsBody.module.scss";
-
-export default function TweetsBody() {
+const TweetsBody = () => {
   return (
     <div className={styles.main}>
       <div className={styles.titleContainer}>
@@ -8,4 +7,6 @@ export default function TweetsBody() {
       </div>
     </div>
   );
-}
+};
+
+export default TweetsBody;

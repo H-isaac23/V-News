@@ -1,6 +1,6 @@
 import styles from "./Navigation.module.scss";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <div className={styles.navbarContainer}>
       <div className={styles.siteNameContainer}>
@@ -13,4 +13,6 @@ export default function Navbar() {
       </div>
     </div>
   );
-}
+};
+
+export default Navbar;
