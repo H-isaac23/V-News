@@ -2,7 +2,7 @@ import styles from "./TweetsCard.module.scss";
 
 const TweetCard = (props) => {
   return (
-    <div className={styles.tweetContainer}>
+    <article className={styles.tweetContainer}>
       <div className={styles.tweetInfo}>
         <img src={props.imageSrc} alt="user pfp" />
         <div className={styles.handleDate}>
@@ -10,7 +10,7 @@ const TweetCard = (props) => {
           <p className="date">{props.date}</p>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

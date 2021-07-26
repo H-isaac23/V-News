@@ -7,12 +7,12 @@ const handle = "@uruharushia";
 
 const TweetsBody = () => {
   return (
-    <div className={styles.main}>
+    <section className={styles.main}>
       <div className={styles.titleContainer}>
         <div className={styles.sectionTitle}>Recent Tweets</div>
       </div>
       <TweetCard imageSrc={user_pfp} handle={handle} date={date} />
-    </div>
+    </section>
   );
 };
 
