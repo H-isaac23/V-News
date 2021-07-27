@@ -1,1 +1,44 @@
 @import "../../styles/variables.scss";
+
+.tweetContainer {
+  background: $bot;
+  color: $white;
+  border-radius: 20px;
+  padding: 1.5em;
+  font-size: 0.5em;
+  margin: 2em;
+  box-shadow: 7px 7px 10px $gray;
+
+  .tweetInfo {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
+
+    .imageWrapper {
+      width: 5em;
+      margin-right: 1em;
+      border-radius: 50%;
+
+      img {
+        width: 100%;
+        border-radius: 50%;
+        border: 2px solid $white;
+        height: auto;
+      }
+    }
+  }
+
+  .handleDate {
+    width: 80%;
+  }
+
+  .content {
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .tweetContainer {
+    margin: 1em 2.5em;
+  }
+}
