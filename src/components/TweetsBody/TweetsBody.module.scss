@@ -1,31 +1,40 @@
 @import "../../styles/variables.scss";
 
-.main {
-  background: white;
-  box-shadow: 0 -5px 1em 0 rgba(0, 0, 0, 0.5);
-  height: 20em;
-  font-size: 1em;
-}
-
-.titleContainer {
-  height: 20em;
+.mainBody {
   background: $white;
-  display: flex;
-  align-items: center;
+  box-shadow: 0 -5px 1em 0 rgba(0, 0, 0, 0.5);
+  height: auto;
+  font-size: 1em;
 
-  .sectionTitle {
-    margin-left: 2em;
-    padding: 0.5em 1em 0.5em 1em;
-    font-size: 3em;
-    font-weight: bold;
-    background: $primary;
-    border-radius: 0.5em;
-    color: $white;
+  .titleContainer {
+    height: 15em;
+    background: $white;
+    display: flex;
+    align-items: center;
+
+    .sectionTitle {
+      margin-left: 1.5em;
+      padding: 0.5em 1em 0.5em 1em;
+      font-size: 3em;
+      font-weight: bold;
+      background: $primary;
+      border-radius: 0.5em;
+      color: $white;
+    }
+  }
+
+  .tweetUpdates {
+    overflow: hidden;
+    font-size: 2em;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
   }
 }
 
 @media screen and (max-width: $breakpoint-tablet) {
-  .main {
-    font-size: 0.6em;
+  .mainBody {
+    font-size: 0.75em;
   }
 }
