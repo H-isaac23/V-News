@@ -9,6 +9,7 @@ const TweetCard = (props) => {
         </div>
         <div className={styles.handleDate}>
           <p className="handle">{props.handle}</p>
+          <hr />
           <p className="date">{props.date}</p>
         </div>
       </div>
