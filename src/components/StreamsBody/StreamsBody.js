@@ -7,7 +7,11 @@ const StreamBody = () => {
       <div className={styles.titleContainer}>
         <div className={styles.sectionTitle}>Recent Streams</div>
       </div>
-      <VideoCards />
+      <div className={styles.videoList}>
+        <VideoCards />
+        <VideoCards />
+        <VideoCards />
+      </div>
     </section>
   );
 };
