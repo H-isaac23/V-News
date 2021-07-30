@@ -1,1 +1,14 @@
 @import "../../styles/variables.scss";
+
+.playerWrapper {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+
+  #player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 7px $bot solid;
+  }
+}
