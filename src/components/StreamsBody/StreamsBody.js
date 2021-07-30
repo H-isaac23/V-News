@@ -1,4 +1,5 @@
 import styles from "./StreamsBody.module.scss";
+import VideoCards from "./VideoCard";
 
 const StreamBody = () => {
   return (
@@ -6,6 +7,7 @@ const StreamBody = () => {
       <div className={styles.titleContainer}>
         <div className={styles.sectionTitle}>Recent Streams</div>
       </div>
+      <VideoCards />
     </section>
   );
 };
