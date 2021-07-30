@@ -3,6 +3,7 @@
 .streams {
   background: $dark-gray;
   font-size: 1em;
+  padding-bottom: 5em;
 
   .titleContainer {
     height: 15em;
@@ -18,5 +19,13 @@
       border-radius: 0.5em;
       color: $white;
     }
+  }
+
+  .videoList {
+    margin-left: 0.45em;
+    display: grid;
+    font-size: 10em;
+    grid-template-columns: repeat(5, 3em);
+    column-gap: 0.3em;
   }
 }
