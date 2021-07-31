@@ -2,6 +2,7 @@
 
 .tweetContainer {
   background: $bot;
+  position: relative;
   color: $white;
   border-radius: 20px;
   padding: 1.5em;
@@ -34,6 +35,55 @@
 
   .content {
     font-weight: 300;
+  }
+
+  .redirect {
+    position: absolute;
+    font-size: 2.5em;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    background: transparent;
+    transition: background 250ms ease-in;
+    color: transparent;
+
+    .tweetHover {
+      padding: 0.5em;
+      transition: filter 250ms;
+    }
+
+    .tweetHover:visited,
+    .tweetHover:link {
+      text-decoration: none;
+      border-radius: 10px;
+      background: rgb(36, 36, 36);
+      color: $white;
+      filter: opacity(0);
+    }
+  }
+}
+
+.tweetContainer:hover {
+  .redirect {
+    background: rgba($color: #fff, $alpha: 0.2);
+    visibility: visible;
+
+    .tweetHover:visited,
+    .tweetHover:link {
+      // background: rgb(36, 36, 36);
+      // color: $white;
+      filter: opacity(1);
+    }
+
+    .tweetHover:hover {
+      color: rgb(36, 36, 36);
+      background: $white;
+    }
   }
 }
 
