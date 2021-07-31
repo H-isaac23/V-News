@@ -21,6 +21,16 @@ const TweetCard = (props) => {
         praesentium accusamus consequatur deserunt nihil exercitationem, maxime
         alias at dolores quidem, libero consequuntur commodi incidunt quo?
       </div>
+      <div className={styles.redirect}>
+        <a
+          href="https://twitter.com/dev__aisha"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.tweetHover}
+        >
+          Go to Tweet
+        </a>
+      </div>
     </article>
   );
 };
