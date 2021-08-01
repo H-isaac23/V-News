@@ -27,5 +27,11 @@
     font-size: 10em;
     grid-template-columns: repeat(5, 3em);
     column-gap: 0.3em;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
