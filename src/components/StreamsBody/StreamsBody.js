@@ -16,8 +16,8 @@ const StreamBody = () => {
         <div className={styles.sectionTitle}>Recent Streams</div>
       </div>
       <div className={styles.scrollers}>
-        <div className={styles.left}>l</div>
-        <div className={styles.right}>r</div>
+        <div className={styles.left}>R</div>
+        <div className={styles.right}>R</div>
       </div>
       <div className={styles.videoList}>
         {sampleVideos.map((url) => (
