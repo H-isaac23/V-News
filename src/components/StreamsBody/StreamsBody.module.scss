@@ -29,9 +29,40 @@
     column-gap: 0.3em;
     overflow-x: auto;
     overflow-y: hidden;
+    z-index: 0;
   }
 
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  .scrollers {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+
+    .right {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: max-content;
+      z-index: 1;
+    }
+
+    .left {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: max-content;
+      z-index: 1;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .streams {
+    font-size: 0.75em;
   }
 }
