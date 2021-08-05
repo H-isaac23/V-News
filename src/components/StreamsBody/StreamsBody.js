@@ -15,10 +15,6 @@ const StreamBody = () => {
       <div className={styles.titleContainer}>
         <div className={styles.sectionTitle}>Recent Streams</div>
       </div>
-      <div className={styles.scrollers}>
-        <div className={styles.left}>L</div>
-        <div className={styles.right}>R</div>
-      </div>
       <div className={styles.videoList}>
         {sampleVideos.map((url) => (
           <VideoCards url={url} />
