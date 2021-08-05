@@ -45,4 +45,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## License
 SVGs used were from fontawesome. [Link to the license](https://fontawesome.com/license)
+
 [MIT](https://opensource.org/licenses/MIT)
