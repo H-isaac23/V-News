@@ -2,7 +2,7 @@
 
 .container {
   .playerWrapper {
-    width: 100%;
+    width: calc(100% - 20px);
     margin: auto;
   }
 }
