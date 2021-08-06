@@ -1,0 +1,8 @@
+@import "../../styles/variables.scss";
+
+.container {
+  .playerWrapper {
+    width: calc(100% - 20px);
+    margin: auto;
+  }
+}
