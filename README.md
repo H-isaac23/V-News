@@ -6,6 +6,9 @@ This project is a fanmade site for getting the latest relevant tweets from popul
 
 To set up and run the project you will need to have [node](https://nodejs.org/en/) (at least version 12) and [yarn](https://yarnpkg.com/) installed.
 
+## Status
+Currently on break, learning some backend stuff to feed this thing what it needs.
+
 ## Available Scripts
 
 In the project directory, you can run:
