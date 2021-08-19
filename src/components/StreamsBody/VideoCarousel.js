@@ -23,8 +23,8 @@ const VideoCarousel = () => {
   return (
     <div className={styles.container}>
       <Carousel responsive={responsive} infinite>
-        {sampleVideos.map((url) => (
-          <VideoCards url={url} />
+        {sampleVideos.map((url, i) => (
+          <VideoCards url={url} key={i} />
         ))}
       </Carousel>
     </div>
