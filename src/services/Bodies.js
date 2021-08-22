@@ -1,5 +1,5 @@
 const axios = require("axios");
-const baseUrl = "http://localhost:3001/tweets";
+const baseUrl = "/api/tweets";
 
 const getTweets = () => {
   return axios.get(baseUrl);
