@@ -1,8 +1,26 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-
 const Tweet = require("./models/tweets");
+const axios = require("axios");
+const token = process.env.BEARER_TOKEN;
+
+// ^^^^^ basic setup ^^^^^^ //
+
+const BEARER = `Bearer ${token}`;
+
+const getNewTweets = () => {
+  const API_URL =
+    "https://api.twitter.com/2/users/1409817941705515015/tweets?max_results=10&tweet.fields=public_metrics,text,author_id&exclude=retweets,replies";
+
+  return axios.get(API_URL, {
+    headers: {
+      Authorization: BEARER,
+    },
+  });
+};
+
+// ^^^^^ api for getting tweets ^^^^^//
 
 app.use(express.json());
 
@@ -32,6 +50,10 @@ app.get("/api/tweets/:id", (req, res) => {
     res.json(tweet);
   });
 });
+
+getNewTweets()
+  .then((res) => console.log(res.data))
+  .catch((err) => console.log(err));
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
