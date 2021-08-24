@@ -30,6 +30,7 @@ const TweetsBody = () => {
             handle={t.handle}
             date={t.date}
             content={t.content}
+            tweet_id={t.tweet_id}
             key={i}
           />
         ))}
