@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
-const url =
-  "mongodb+srv://aisha_test:aisha_test@cluster0.mgaom.mongodb.net/vnews-accounts?retryWrites=true&w=majority";
+const url = process.env.MONGODB_URI_ACC;
 
 mongoose
   .connect(url, {
