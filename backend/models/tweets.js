@@ -28,6 +28,10 @@ const tweetSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  profile_image_url: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Tweet", tweetSchema);
