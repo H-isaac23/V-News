@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const url = process.env.MONGODB_URI;
+const uniqueValidator = require("mongoose-unique-validator");
 
 mongoose
   .connect(url, {
@@ -8,7 +9,7 @@ mongoose
     useCreateIndex: true,
     useUnifiedTopology: true,
   })
-  .then((response) => console.log("Connected to mongoDB"))
+  .then((response) => console.log("Connected to mongoDB (tweets)"))
   .catch((err) => console.log(err.message));
 
 const tweetSchema = mongoose.Schema({
@@ -27,11 +28,14 @@ const tweetSchema = mongoose.Schema({
   tweet_id: {
     type: String,
     required: true,
+    unique: true,
   },
   profile_image_url: {
     type: String,
     required: true,
   },
 });
+
+tweetSchema.plugin(uniqueValidator);
 
 module.exports = mongoose.model("Tweet", tweetSchema);
