@@ -1,6 +1,6 @@
 import styles from "./TweetsCard.module.scss";
 
-const TweetCard = ({ imageSrc, handle, date, content }) => {
+const TweetCard = ({ imageSrc, handle, date, content, tweet_id }) => {
   return (
     <article className={styles.tweetContainer}>
       <div className={styles.tweetInfo}>
@@ -10,13 +10,13 @@ const TweetCard = ({ imageSrc, handle, date, content }) => {
         <div className={styles.handleDate}>
           <p className="handle">{handle}</p>
           <hr />
-          <p className="date">{date}</p>
+          <p className="date">{new Date(date).toTimeString()}</p>
         </div>
       </div>
       <div className={styles.content}>{content}</div>
       <div className={styles.redirect}>
         <a
-          href="https://twitter.com/dev__aisha"
+          href={`https://twitter.com/${handle}/status/${tweet_id}`}
           target="_blank"
           rel="noreferrer"
           className={styles.tweetHover}
