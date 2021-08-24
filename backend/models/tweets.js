@@ -24,6 +24,10 @@ const tweetSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  tweet_id: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Tweet", tweetSchema);
