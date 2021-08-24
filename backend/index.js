@@ -1,17 +1,28 @@
 require("dotenv").config();
 const express = require("express");
+const mongoose = require("mongoose");
 const app = express();
-const Tweet = require("./models/tweets");
+const Account = require("./models/accounts");
 const axios = require("axios");
 const token = process.env.BEARER_TOKEN;
+let accounts = null;
+let Tweet = null;
 
 // ^^^^^ basic setup ^^^^^^ //
 
+Account.find({}).then((res) => {
+  accounts = res;
+  console.log("--------------------------------");
+  console.log("--------------------------------");
+  console.log("--------------------------------");
+  mongoose.connection.close();
+  Tweet = require("./models/tweets");
+});
+
 const BEARER = `Bearer ${token}`;
 
-const getNewTweets = () => {
-  const API_URL =
-    "https://api.twitter.com/2/users/1409817941705515015/tweets?max_results=10&tweet.fields=public_metrics,text,author_id&exclude=retweets,replies";
+const getNewTweets = (acc_id) => {
+  const API_URL = `https://api.twitter.com/2/users/${acc_id}/tweets?max_results=5&expansions=author_id&tweet.fields=public_metrics,text,created_at&user.fields=id,username,name,profile_image_url&exclude=retweets,replies`;
 
   return axios.get(API_URL, {
     headers: {
@@ -25,18 +36,40 @@ const getNewTweets = () => {
 app.use(express.json());
 
 app.post("/api/tweets", (req, res) => {
-  const body = req.body;
+  // loop through the accounts and save tweets to database
+  accounts.forEach((account) => {
+    getNewTweets(account.t_id)
+      .then((result) => {
+        const data = result.data;
+        const tweets = data.data;
+        const user_info = data.includes.users;
 
-  const testTweet = new Tweet({
-    handle: body.handle,
-    date: new Date(),
-    content: body.content,
+        // for all the tweets on an account, make a new Tweet instance and save to db
+        tweets.forEach((tweet) => {
+          const newTweet = new Tweet({
+            handle: user_info[0].username,
+            date: tweet.created_at,
+            content: tweet.text,
+            tweet_id: tweet.id,
+            profile_image_url: user_info[0].profile_image_url.replace(
+              "normal",
+              "200x200"
+            ),
+          });
+
+          newTweet
+            .save()
+            .then((result) => {
+              res.status(200).end();
+            })
+            .catch((err) => {
+              res.status(400).end();
+              console.log(err.message);
+            }); // in case the tweet already exists in the db
+        });
+      })
+      .catch((err) => console.log(err));
   });
-
-  testTweet
-    .save()
-    .then((response) => res.json(response))
-    .catch((err) => res.status(400).end());
 });
 
 app.get("/api/tweets", (req, res) => {
@@ -50,10 +83,6 @@ app.get("/api/tweets/:id", (req, res) => {
     res.json(tweet);
   });
 });
-
-getNewTweets()
-  .then((res) => console.log(res.data))
-  .catch((err) => console.log(err));
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

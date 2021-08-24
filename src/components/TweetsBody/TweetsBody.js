@@ -1,6 +1,5 @@
 import styles from "./TweetsBody.module.scss";
 import TweetCard from "./TweetsCard";
-import user_pfp from "../../public/rushia.jpg";
 import { useEffect, useState } from "react";
 import getTweets from "../../services/Bodies";
 
@@ -9,9 +8,15 @@ const TweetsBody = () => {
 
   useEffect(() => {
     getTweets().then((response) => {
-      setTweets(response.data);
+      setTweets(
+        response.data
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
+          .slice(0, 10)
+      );
     });
   }, []);
+
+  console.log(tweets);
 
   return (
     <section className={styles.mainBody}>
@@ -21,7 +26,7 @@ const TweetsBody = () => {
       <div className={styles.tweetUpdates}>
         {tweets.map((t, i) => (
           <TweetCard
-            imageSrc={user_pfp}
+            imageSrc={t.profile_image_url}
             handle={t.handle}
             date={t.date}
             content={t.content}
