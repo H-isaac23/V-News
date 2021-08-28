@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/H-isaac23/V-Updates/issues"
   },
-  "homepage": "https://github.com/H-isaac23/V-Updates#readme"
+  "homepage": "https://github.com/H-isaac23/V-Updates#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
 }
