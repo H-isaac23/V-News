@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import VideoCards from "./VideoCard";
+import ReactPlayer from "react-player";
 import styles from "./VideoCarousel.module.scss";
 
 const sampleVideos = [
@@ -23,8 +23,17 @@ const VideoCarousel = () => {
   return (
     <div className={styles.container}>
       <Carousel responsive={responsive} infinite>
-        {sampleVideos.map((url, i) => (
-          <VideoCards url={url} key={i} />
+        {sampleVideos.map((url) => (
+          <div className={styles.marginIndicator}>
+            <div className={styles.playerWrapper}>
+              <ReactPlayer
+                id={styles.player}
+                url={url}
+                height={"100%"}
+                width={"100%"}
+              />
+            </div>
+          </div>
         ))}
       </Carousel>
     </div>
