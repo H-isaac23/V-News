@@ -1,0 +1,21 @@
+{
+  "name": "v-updates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd packages/backend && npm start\" \"cd packages/frontend && yarn start\"",
+    "startFrontend": "cd packages/frontend && yarn start",
+    "startBackend": "cd packages/backend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H-isaac23/V-Updates.git"
+  },
+  "author": "John Isaac Delgado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/H-isaac23/V-Updates/issues"
+  },
+  "homepage": "https://github.com/H-isaac23/V-Updates#readme"
+}
