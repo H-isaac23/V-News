@@ -2,7 +2,7 @@ import styles from "./Footer.module.scss";
 
 const Footer = () => {
   const reddit_site = "https://www.reddit.com/r/Hololive/";
-  const twitter_site = "https://twitter.com/dev__aisha";
+  const twitter_site = "https://twitter.com/dev__holo";
   const github_site = "https://github.com/H-isaac23";
 
   return (
