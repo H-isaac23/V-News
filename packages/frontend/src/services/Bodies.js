@@ -1,8 +1,23 @@
 const axios = require("axios");
-const baseUrl = "/api/tweets";
+const tweetUrl = "/api/tweets";
+const accountUrl = "/api/accounts";
 
 const getTweets = () => {
-  return axios.get(baseUrl);
+  return axios.get(tweetUrl);
 };
 
-export default getTweets;
+const getAccounts = () => {
+  return axios.get(accountUrl);
+};
+
+const reloadTweets = (accounts) => {
+  return axios.post(tweetUrl, accounts);
+};
+
+const services = {
+  getTweets,
+  getAccounts,
+  reloadTweets,
+};
+
+export default services;
