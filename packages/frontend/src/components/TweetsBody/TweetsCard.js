@@ -10,7 +10,10 @@ const TweetCard = ({ imageSrc, handle, date, content, tweet_id }) => {
         <div className={styles.handleDate}>
           <p className="handle">{handle}</p>
           <hr />
-          <p className="date">{new Date(date).toTimeString()}</p>
+          <p className="date">
+            {new Date(date).toTimeString().slice(0, 8)}{" "}
+            {new Date(date).toTimeString().slice(18)}
+          </p>
         </div>
       </div>
       <div className={styles.content}>{content}</div>

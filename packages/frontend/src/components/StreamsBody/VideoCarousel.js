@@ -23,8 +23,8 @@ const VideoCarousel = () => {
   return (
     <div className={styles.container}>
       <Carousel responsive={responsive} infinite>
-        {sampleVideos.map((url) => (
-          <div className={styles.marginIndicator}>
+        {sampleVideos.map((url, i) => (
+          <div className={styles.marginIndicator} key={i}>
             <div className={styles.playerWrapper}>
               <ReactPlayer
                 id={styles.player}

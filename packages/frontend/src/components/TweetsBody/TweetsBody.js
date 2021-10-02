@@ -1,13 +1,13 @@
 import styles from "./TweetsBody.module.scss";
 import TweetCard from "./TweetsCard";
 import { useEffect, useState } from "react";
-import getTweets from "../../services/Bodies";
+import services from "../../services/Bodies";
 
 const TweetsBody = () => {
   const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
-    getTweets().then((response) => {
+    services.getTweets().then((response) => {
       setTweets(
         response.data
           .sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -15,6 +15,28 @@ const TweetsBody = () => {
       );
     });
   }, []);
+
+  // for getting new tweets, will implement the functionality later
+  // useEffect(() => {
+  //   services.getAccounts().then((accounts) => {
+  //     console.log(accounts);
+  //     services.reloadTweets(accounts.data).then((_) => {
+  //       services.getTweets().then((response) => {
+  //         setTweets(
+  //           response.data
+  //             .sort((a, b) => new Date(b.date) - new Date(a.date))
+  //             .slice(0, 10)
+  //         );
+  //       });
+  //     });
+  //   });
+  // }, []);
+
+  // useEffect(() => {
+  //   services.getAccounts().then((response) => {
+  //     console.log(response.data);
+  //   });
+  // });
 
   console.log(tweets);
 
