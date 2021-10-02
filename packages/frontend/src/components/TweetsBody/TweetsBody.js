@@ -38,8 +38,6 @@ const TweetsBody = () => {
   //   });
   // });
 
-  console.log(tweets);
-
   return (
     <section className={styles.mainBody}>
       <div className={styles.titleContainer}>
