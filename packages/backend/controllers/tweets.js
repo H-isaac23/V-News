@@ -10,31 +10,33 @@ tweetsRouter.post("/", (req, res) => {
       .then((result) => {
         const data = result.data;
         const tweets = data.data;
-        const user_info = data.includes.users;
 
         // for all the tweets on an account, make a new Tweet instance and save to db
-        tweets.forEach((tweet) => {
-          const newTweet = new Tweet({
-            handle: user_info[0].username,
-            date: tweet.created_at,
-            content: tweet.text,
-            tweet_id: tweet.id,
-            profile_image_url: user_info[0].profile_image_url.replace(
-              "normal",
-              "200x200"
-            ),
-          });
+        if (data.includes !== undefined) {
+          const user_info = data.includes.users;
+          tweets.forEach((tweet) => {
+            const newTweet = new Tweet({
+              handle: user_info[0].username,
+              date: tweet.created_at,
+              content: tweet.text,
+              tweet_id: tweet.id,
+              profile_image_url: user_info[0].profile_image_url.replace(
+                "normal",
+                "200x200"
+              ),
+            });
 
-          newTweet
-            .save()
-            .then((result) => {
-              res.status(200).end();
-            })
-            .catch((err) => {
-              res.status(400).end();
-              console.log(err.message);
-            }); // in case the tweet already exists in the db
-        });
+            newTweet
+              .save()
+              .then((result) => {
+                res.status(200).end();
+              })
+              .catch((err) => {
+                res.status(400).end();
+                console.log(err.message);
+              }); // in case the tweet already exists in the db
+          });
+        }
       })
       .catch((err) => console.log(err));
   });
