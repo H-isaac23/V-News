@@ -1,4 +1,5 @@
 import styles from "./Navigation.module.scss";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -7,9 +8,18 @@ const Navbar = () => {
         <div className={styles.siteName}>V-News</div>
       </div>
       <div className={styles.navigators}>
-        <div className={`${styles.home} ${styles.navs}`}>Home</div>
-        <div className={`${styles.disclaimer} ${styles.navs}`}>Disclaimer</div>
-        <div className={`${styles.credits} ${styles.navs}`}>Credits</div>
+        <Link to="/" className={`${styles.home} ${styles.navs}`}>
+          Home
+        </Link>
+        <Link
+          to="/disclaimer"
+          className={`${styles.disclaimer} ${styles.navs}`}
+        >
+          Disclaimer
+        </Link>
+        <Link to="/credits" className={`${styles.credits} ${styles.navs}`}>
+          Credits
+        </Link>
       </div>
     </div>
   );

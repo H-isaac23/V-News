@@ -1,0 +1,11 @@
+@import "./styles/variables.scss";
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .mainContent {
+    flex: 1;
+  }
+}
