@@ -6,7 +6,7 @@ const Footer = () => {
   const github_site = "https://github.com/H-isaac23";
 
   return (
-    <div className={styles.footerContainer}>
+    <footer className={styles.footerContainer}>
       <p className={styles.projectName}>"Virtual Youtuber Updates" Project</p>
       <p className={styles.socials}>
         <a href={github_site} target="_blank" rel="noreferrer">
@@ -22,7 +22,7 @@ const Footer = () => {
       <div className={styles.c}>
         <p>© 2021 V-Updates</p>
       </div>
-    </div>
+    </footer>
   );
 };
 
